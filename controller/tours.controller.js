@@ -57,12 +57,8 @@ exports.chepestProduct = async (req, res) => {
 exports.getToursById = async (req, res) => {
   try {
     const { id } = req.params;
-
     const tours = await Tours.find({ _id: id });
-    let viewRoute = await tours[0].count;
-    counter(viewRoute);
-    count += 1;
-    console.log(count);
+    // let viewRoute = await tours[0].count;
 
     // const updateViewer = await Tours.updateOne({ _id: id });
     res.status(200).json({
