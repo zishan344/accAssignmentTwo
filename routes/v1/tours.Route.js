@@ -5,6 +5,8 @@ const viewCount = require("../../middleware/viewCount");
 
 router.route("/").get(allProduct.getAllTours).post(allProduct.createTours);
 router.route("/cheapest").get(allProduct.chepestProduct);
+router.route("/trending").get(allProduct.trendingTours);
+yar;
 router.route("/:id").get(viewCount, allProduct.getToursById);
-
+console.log("routing successfully completed");
 module.exports = router;

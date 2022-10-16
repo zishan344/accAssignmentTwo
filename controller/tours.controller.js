@@ -54,6 +54,22 @@ exports.chepestProduct = async (req, res) => {
     });
   }
 };
+exports.trendingTours = async (req, res) => {
+  try {
+    const tours = await Tours.find({}).sort({ count: -1 }).limit(3);
+    res.status(200).json({
+      status: "success",
+      message: "data get successfully",
+      data: tours,
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: "failed",
+      message: "can't get data",
+      error: err.message,
+    });
+  }
+};
 exports.getToursById = async (req, res) => {
   try {
     const { id } = req.params;

@@ -7,12 +7,10 @@ const viewCount = async (req, res, next) => {
   count = tours[0].count;
   // count = toursCount;
   count++;
-  console.log(count);
   const updateCounter = await Tours.updateOne(
     { _id: id },
     { $set: { count: count } }
   );
-  console.log(updateCounter);
   // return count;
   next();
 };
