@@ -6,7 +6,7 @@ const allTours = require("./routes/v1/tours.Route");
 // middleware
 app.use(express.json());
 app.use(cors());
-app.use("/api/v1/allTours", allTours);
+app.use("/api/v1/tours", allTours);
 app.get("/", (req, res) => {
   res.send("server run successfully ");
 });
